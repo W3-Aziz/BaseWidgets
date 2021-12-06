@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 
 routes() => [
-      GetPage(name: "/splash", page: () => SplashScreen()),
+      GetPage(name: "/splash", page: () => const SplashScreen()),
       GetPage(name: "/decision", page: () => const ChooseRoute()),
     ];
 

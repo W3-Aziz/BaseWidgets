@@ -13,6 +13,7 @@ class BorderButton extends StatelessWidget {
   Color bgColor;
   TextStyle labelStyle;
 
+  //Set default property based on project requirement
   BorderButton({
     Key? key,
     required this.onClick,

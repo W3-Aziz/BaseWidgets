@@ -5,6 +5,7 @@ import 'package:base_widget/ui/widget/round_button.dart';
 import 'package:base_widget/ui/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -31,6 +32,7 @@ class _SplashScreen extends State<SplashScreen> {
         ),
       ),
       body: Container(
+        padding: EdgeInsets.only(top: 2.h),
         width: Get.width,
         height: Get.height,
         child: SingleChildScrollView(
