@@ -2,6 +2,7 @@ import 'package:base_widget/asset/image_asset.dart';
 import 'package:base_widget/asset/them_service.dart';
 import 'package:base_widget/ui/widget/border_button.dart';
 import 'package:base_widget/ui/widget/round_button.dart';
+import 'package:base_widget/ui/widget/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -80,7 +81,19 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               BorderButton(
                 onClick: () {},
+                label: "Language change",
                 labelStyle: const TextStyle(fontFamily: FontFamily.pacifico),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: BaseTextField(
+                  onChange: (value) {
+                    print("Change value is here: $value");
+                  },
+                ),
               ),
             ],
           ),
