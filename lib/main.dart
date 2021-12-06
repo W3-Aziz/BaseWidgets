@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 import 'asset/localization_service.dart';
 import 'asset/them_service.dart';
@@ -12,6 +13,7 @@ void main() async {
   //If Flutter needs to call native code before calling runApp ensure initialize
   //WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
+  setPathUrlStrategy();
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,

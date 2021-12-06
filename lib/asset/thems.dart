@@ -10,7 +10,7 @@ class Themes {
   static final dark = ThemeData.dark().copyWith(
     backgroundColor: Colors.black,
     buttonTheme:const ButtonThemeData(
-        buttonColor: Colors.red
+
     ),
   );
 }
