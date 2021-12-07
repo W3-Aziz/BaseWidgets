@@ -3,6 +3,8 @@ import 'package:base_widget/asset/them_service.dart';
 import 'package:base_widget/ui/widget/border_button.dart';
 import 'package:base_widget/ui/widget/round_button.dart';
 import 'package:base_widget/ui/widget/text_field.dart';
+import 'package:base_widget/util/image_util.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -96,6 +98,25 @@ class _SplashScreen extends State<SplashScreen> {
                     print("Change value is here: $value");
                   },
                 ),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              ImageUtil.loadImage(
+                url: 'https://loremflickr.com/100/100/music?lock=5',
+                radius: 20.0,
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              ImageUtil.loadImage(
+                url: 'https://loremflickr.com/100/100/music?lock=5',
+                width: 100.0,
+                height: 100.0,
+                radius: 20.0,
+              ),
+              const SizedBox(
+                height: 20.0,
               ),
             ],
           ),
