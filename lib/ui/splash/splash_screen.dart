@@ -2,6 +2,8 @@ import 'package:base_widget/asset/image_asset.dart';
 import 'package:base_widget/asset/them_service.dart';
 import 'package:base_widget/data/local/db_manager.dart';
 import 'package:base_widget/data/local/model/user.dart';
+import 'package:base_widget/data/remote/api_constant.dart';
+import 'package:base_widget/data/remote/network_manager.dart';
 import 'package:base_widget/ui/widget/border_button.dart';
 import 'package:base_widget/ui/widget/round_button.dart';
 import 'package:base_widget/ui/widget/text_field.dart';
@@ -19,11 +21,13 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreen extends State<SplashScreen> {
   late DBManager dbManager;
+  late NetManager _netManager;
 
   @override
   void initState() {
     super.initState();
     dbManager = DBManager();
+    _netManager = NetManager();
   }
 
   @override
@@ -94,15 +98,19 @@ class _SplashScreen extends State<SplashScreen> {
               ),
               BorderButton(
                 onClick: () async {
-                  var user = User(
+                  /*var user = User(
                       name: "Aziz",
                       email: "example@gmail.com",
                       phone: "01923456789");
                   var value = await dbManager.addUser(user);
-                  print("User added success : $value");
+                  print("User added success : $value");*/
 
                   //var users = await dbManager.getAllUsers();
                   //print("User added success : ${users.length}");
+
+                  //_netManager.fetchUsers();
+                  _netManager.getRequest(api: ApiConstant.userApi);
+
                 },
                 label: "Language change",
                 labelStyle: const TextStyle(fontFamily: FontFamily.pacifico),

@@ -1,3 +1,6 @@
-class ApiConstant{
-  static const baseUrl = "https://www.googe.com";
+class ApiConstant {
+  static const baseUrl = "https://jsonplaceholder.typicode.com";
+
+  /// API list
+  static const userApi = "/users";
 }

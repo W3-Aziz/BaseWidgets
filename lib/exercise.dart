@@ -1,3 +1,4 @@
+
 enum  Test{
   one,
   two,
@@ -19,4 +20,5 @@ class TestEnum{
   static Test _getTest(){
     return Test.one;
   }
+
 }

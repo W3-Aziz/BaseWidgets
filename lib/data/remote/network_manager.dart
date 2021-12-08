@@ -38,14 +38,43 @@ class NetManager {
     };
   }
 
-  Future<Response> getRequest(String api, Map<String, dynamic> data) {
-    return _dio!.request(api,
-        data: data, options: Options(method: 'GET', headers: header));
+  Future<Response> getRequest({
+    required String api,
+    Map<String, dynamic>? data,
+  }) {
+    return _dio!.request(
+      api,
+      data: data,
+      options: Options(
+        method: 'GET',
+        headers: header,
+        responseType: ResponseType.json,
+      ),
+    );
   }
 
-  Future<Response> postRequest(String api, Map<String, dynamic> data) {
+  /// Post method parameter api is required
+  /// data is optional
+  Future<Response> postRequest({
+    required String api,
+    Map<String, dynamic>? data,
+  }) {
     return _dio!.request(api,
-        data: data, options: Options(method: 'POST', headers: header));
+        data: data,
+        options: Options(
+          method: 'POST',
+          headers: header,
+        ));
+  }
+
+  void fetchUsers() async {
+    try {
+      var response =
+          await _dio?.get('https://jsonplaceholder.typicode.com/users');
+      print(response);
+    } catch (e) {
+      print(e);
+    }
   }
 }
 
