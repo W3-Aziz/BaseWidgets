@@ -30,15 +30,51 @@ class ImageUtil {
             image: DecorationImage(
               image: imageProvider,
               fit: BoxFit.cover,
+
+              ///Change fit value to set image properly.
             ),
           ),
         ),
         placeholder: (context, url) => const CupertinoActivityIndicator(),
+
+        /// Set your error place holder image here
         errorWidget: (context, url, error) => const Icon(
           Icons.photo,
           size: 100,
           color: Colors.amber,
         ),
+      );
+    }
+  }
+
+  static CircleAvatar showAvatar({
+    String? assetImg,
+    String? netImg,
+    Color bgColor = Colors.transparent,
+    Color forGround = Colors.black,
+    double radius = 50.0,
+    Widget? child,
+  }) {
+    if (assetImg != null) {
+      return CircleAvatar(
+        backgroundImage: AssetImage(assetImg),
+        backgroundColor: Colors.transparent,
+        radius: radius,
+        child: child,
+      );
+    } else if (netImg != null) {
+      return CircleAvatar(
+        backgroundImage: NetworkImage(netImg),
+        backgroundColor: bgColor,
+        radius: radius,
+        child: child,
+      );
+    } else {
+      return CircleAvatar(
+        backgroundColor: bgColor,
+        foregroundColor: forGround, /// Child color
+        child: child,
+        radius: radius,
       );
     }
   }

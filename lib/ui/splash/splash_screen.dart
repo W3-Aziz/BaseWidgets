@@ -1,10 +1,11 @@
 import 'package:base_widget/asset/image_asset.dart';
 import 'package:base_widget/asset/them_service.dart';
+import 'package:base_widget/data/local/db_manager.dart';
+import 'package:base_widget/data/local/model/user.dart';
 import 'package:base_widget/ui/widget/border_button.dart';
 import 'package:base_widget/ui/widget/round_button.dart';
 import 'package:base_widget/ui/widget/text_field.dart';
 import 'package:base_widget/util/image_util.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -17,6 +18,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreen extends State<SplashScreen> {
+  late DBManager dbManager;
+
+  @override
+  void initState() {
+    super.initState();
+    dbManager = DBManager();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +93,17 @@ class _SplashScreen extends State<SplashScreen> {
                 height: 10.0,
               ),
               BorderButton(
-                onClick: () {},
+                onClick: () async {
+                  var user = User(
+                      name: "Aziz",
+                      email: "example@gmail.com",
+                      phone: "01923456789");
+                  var value = await dbManager.addUser(user);
+                  print("User added success : $value");
+
+                  //var users = await dbManager.getAllUsers();
+                  //print("User added success : ${users.length}");
+                },
                 label: "Language change",
                 labelStyle: const TextStyle(fontFamily: FontFamily.pacifico),
               ),
@@ -118,6 +137,11 @@ class _SplashScreen extends State<SplashScreen> {
               const SizedBox(
                 height: 20.0,
               ),
+              ImageUtil.showAvatar(assetImg: HomeAsset.w3Icon),
+              const SizedBox(
+                height: 20.0,
+              ),
+              ImageUtil.showAvatar(child: Text("M"), bgColor: Colors.teal),
             ],
           ),
         ),
