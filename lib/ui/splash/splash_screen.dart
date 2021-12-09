@@ -1,13 +1,13 @@
-import 'package:base_widget/asset/image_asset.dart';
-import 'package:base_widget/asset/them_service.dart';
-import 'package:base_widget/data/local/db_manager.dart';
-import 'package:base_widget/data/local/model/user.dart';
-import 'package:base_widget/data/remote/api_constant.dart';
-import 'package:base_widget/data/remote/network_manager.dart';
-import 'package:base_widget/ui/widget/border_button.dart';
-import 'package:base_widget/ui/widget/round_button.dart';
-import 'package:base_widget/ui/widget/text_field.dart';
-import 'package:base_widget/util/image_util.dart';
+import '/asset/image_asset.dart';
+import '/asset/them_service.dart';
+import '/data/local/db_manager.dart';
+import '/data/local/model/user.dart';
+import '/data/remote/api_constant.dart';
+import '/data/remote/network_manager.dart';
+import '/ui/widget/border_button.dart';
+import '/ui/widget/round_button.dart';
+import '/ui/widget/text_field.dart';
+import '/util/image_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -110,11 +110,14 @@ class _SplashScreen extends State<SplashScreen> {
 
                   //_netManager.fetchUsers();
                   _netManager.getRequest(api: ApiConstant.userApi);
-
                 },
                 label: "Language change",
                 labelStyle: const TextStyle(fontFamily: FontFamily.pacifico),
               ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Text("Check theme color"),
               const SizedBox(
                 height: 10.0,
               ),
@@ -150,6 +153,28 @@ class _SplashScreen extends State<SplashScreen> {
                 height: 20.0,
               ),
               ImageUtil.showAvatar(child: Text("M"), bgColor: Colors.teal),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Card(
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: ListTile(
+                    leading: ImageUtil.showAvatar(
+                        child: Text("AI"), radius: 20, bgColor: Colors.grey),
+                    title: const Text("This is a demo card"),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("This is a container"),
+                ),
+              )
             ],
           ),
         ),

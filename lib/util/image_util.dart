@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ImageUtil {
+  ImageUtil._();
+
   static CachedNetworkImage loadImage({
     required String url,
     width = 0.0,
@@ -72,7 +74,9 @@ class ImageUtil {
     } else {
       return CircleAvatar(
         backgroundColor: bgColor,
-        foregroundColor: forGround, /// Child color
+        foregroundColor: forGround,
+
+        /// Child color
         child: child,
         radius: radius,
       );

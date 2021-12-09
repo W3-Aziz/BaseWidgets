@@ -6,9 +6,8 @@ import 'package:url_strategy/url_strategy.dart';
 
 import 'asset/localization_service.dart';
 import 'asset/them_service.dart';
-import 'asset/thems.dart';
+import 'asset/themes.dart';
 import 'route/routes.dart';
-import 'ui/splash/splash_screen.dart';
 
 void main() async {
   //If Flutter needs to call native code before calling runApp ensure initialize

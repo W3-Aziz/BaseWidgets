@@ -36,8 +36,8 @@ class BorderButton extends StatelessWidget {
       onLongPress: onLongPressed,
       child: Text(label),
       style: OutlinedButton.styleFrom(
-        primary: labelColor ?? labelDefaultColor,
-        backgroundColor: bgColor,
+        primary: labelColor ?? labelDefaultColor, ///Button text color
+        backgroundColor: bgColor,                 ///Button background color
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(radius),
         ),
