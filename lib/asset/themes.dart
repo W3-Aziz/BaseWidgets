@@ -31,6 +31,11 @@ class Themes {
         borderRadius: BorderRadius.circular(5.0) /// Card corner radius
       ),
     ),*/
+
+    /*iconTheme: const IconThemeData(
+      color: Colors.deepOrange,
+      size: 40,
+    ),*/
   );
   static final dark = ThemeData.dark().copyWith(
     backgroundColor: Colors.black,

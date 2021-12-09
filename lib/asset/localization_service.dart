@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:get/get.dart';
 
 class LocalizationService extends Translations {
+
   // Default locale
   static const locale = Locale('en', 'US');
 
