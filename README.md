@@ -15,6 +15,9 @@ A Flutter Base Project
 
 - Clone base project
 - Build the project in android atudio
-- Run command *flutter pub run change_app_package_name:main com.new.package.name*
+- Run command **flutter pub run change_app_package_name:main com.new.package.name**
 - Change label in AndroidManifest.xml
+- Open info.plist (located at ios/Runner)
+- <key>CFBundleName</key>
+- <string>App Name</string>
 
