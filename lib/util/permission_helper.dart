@@ -1,7 +1,8 @@
-/*
 import 'package:permission_handler/permission_handler.dart';
 
 class AccessManager {
+  AccessManager._();
+
   static Future<Status> ask(Permission permission) async {
     var state = await permission.status;
     if (state.isGranted) {
@@ -54,4 +55,3 @@ enum Status {
   /// *Only supported on Android.*
   permanentlyDenied,
 }
-*/

@@ -25,8 +25,10 @@ void main() async {
           locale: LocalizationService.locale,
           fallbackLocale: LocalizationService.fallbackLocale,
           translations: LocalizationService(),
-          initialRoute: '/splash',
-          getPages: routes(),
+          defaultTransition: Transition.rightToLeft,  /// Screen transition animation define here
+          transitionDuration: const Duration(milliseconds: 500), /// Change transition duration
+          initialRoute: '/splash',   ///Start screen
+          getPages: routes(),  /// All route list
         );
       },
     ),

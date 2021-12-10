@@ -119,7 +119,7 @@ class _SplashScreen extends State<SplashScreen> {
               const SizedBox(
                 height: 10.0,
               ),
-              Text("Check theme color"),
+              const Text("Check theme color"),
               const SizedBox(
                 height: 10.0,
               ),
