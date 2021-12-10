@@ -7,9 +7,9 @@ class ImageUtil {
 
   static CachedNetworkImage loadImage({
     required String url,
-    width = 0.0,
-    height = 0.0,
-    radius = 5.0,
+    double width = 0.0,
+    double height = 0.0,
+    double radius = 5.0,
   }) {
     if (width == 0.0 && height == 0.0) {
       return CachedNetworkImage(
